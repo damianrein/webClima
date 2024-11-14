@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Consulta del Pronóstico del Clima</h1>
+    <input [(ngModel)]="city" type="text" placeholder="Ingresa una ciudad" />
+    <button (click)="getWeather()">Consultar</button>
+  
+    <div *ngIf="weatherData">
+      <h2>{{ weatherData.name }}</h2>
+      <p>Temperatura: {{ weatherData.main.temp }} °C</p>
+      <p>Condición: {{ weatherData.weather[0].description }}</p>
+      <p>Humedad: {{ weatherData.main.humidity }}%</p>
+    </div>
+  
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+  
